@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin-top: 50px;
+      }
+      h1 {
+        text-align: center;
+      }
+      #canvas {
+        margin: auto;
+        display: block;
+        border: 1px solid silver;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Canvas Drawing</h1>
+    <canvas id="canvas" width="1000px" height="500px"></canvas>
+
+    <script>
+      // Create variables
+      const canvas = window.document.querySelector('#canvas');
+      const ctx = canvas.getContext('2d');
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+// Head
+      ctx.fillStyle = '#F9E045';
+      ctx.strokeStyle = '#CA9144';
+      ctx.lineWidth = 15;
+      ctx.arc(675, 550, 500, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+// Eyes
+ctx.fillStyle = "#000";
+ctx.fillRect(500, 300, 150, 150);
+ctx.fillRect(700, 300, 150, 150);
+
+// Mouth
+ctx.strokeStyle = 'Black'
+ctx.lineWidth = 20
+
+ctx.beginPath();
+ctx.moveTo(1100,650);
+ctx.lineTo(300,850);
+ctx.stroke();
+    </script>
+  </body>
+</html>
