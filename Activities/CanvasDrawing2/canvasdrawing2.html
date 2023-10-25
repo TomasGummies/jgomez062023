@@ -12,9 +12,11 @@
       }
       body {
         margin-top: 50px;
+        background: #000;
       }
       h1 {
         text-align: center;
+        color: white;
       }
       #canvas {
         margin: auto;
@@ -31,6 +33,18 @@
       // Create variables
       const canvas = window.document.querySelector('#canvas');
       const ctx = canvas.getContext('2d');
+
+      // Grass
+      ctx.fillStyle = "Green"
+      ctx.fillRect(0,380, 1000,120);
+
+
+
+      //Trunks
+      ctx.strokeStyle = "Brown"
+      ctx.lineWidth = 10
+      ctx.beginPath();
+      ctx.moveTo(50,350);
+      ctx.lineTo(100,400);
     </script>
   </body>
-</html>
