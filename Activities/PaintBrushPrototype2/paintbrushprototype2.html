@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <style>
+        :root
+        {
+            --default-canvas-color: yellow;
+            --secondary-canvas-color:indigo;
+        
+        }
+        *
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #canvas
+        {
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+// Create and assign canvas variable
+const canvas = window.document.querySelector('#canvas');
+const ctx = canvas.getContext('2d')
+
+//Set the canvas color
+// canvas.style.backgroundColor = 'lightblue';
+canvas.style.backgroundColor = getComputedStyle(canvas).getPropertyValue('--default-canvas-color');
+
+// set default canvas size
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+//Create Mouse Object
+const mouse ={
+x:undefined,
+y:undefined,
+};
+//  Add event listner
+canvas.addEventListener('click', function(event)
+{
+    //console.log(event);
+    mouse.x = event.x;
+    mouse.y = event.y;
+
+    // alert(mouse.x +   ' | ' + mouse.y);
+
+    draw();
+});
+//add an event listner to canvas
+canvas.addEventListener('mousemove', function(e){
+mouse.x = e.x;
+mouse.y = e.y;
+
+draw();
+
+});
+
+
+
+//Call draw function
+// draw();
+
+// Handle reszing of browser window
+window.addEventListener('resize', function(){
+
+// Reset canvas size
+    //set default canvas size
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+
+// draw circle
+
+function draw()
+{
+    ctx.beginPath();
+    ctx.fillStyle = 'blue';
+// ctx.strokeStyle = 'black';
+// ctx.lineWidth = 2;
+ctx.arc(mouse.x, mouse.y, 30, 0, Math.PI * 2);
+ctx.fill();
+// ctx.stroke();
+}
+    </script>
+</body>
+</html>
