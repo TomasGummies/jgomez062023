@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paintbrush Version 1</title>
+    <title>Paintbrush Version 4</title>
     <style>
         *
         {
@@ -119,6 +119,7 @@ function draw()
         // ctx.beginPath();
         ctx.strokeStyle = brushColor;
         ctx.lineWidth = brushSize;
+        ctx.lineJoin = 'round'
         // ctx.arc(mouse.x, mouse.y, brushSize, 0, Math.PI * 2);
         ctx.lineTo(mouse.x, mouse.y);
         ctx.stroke();
