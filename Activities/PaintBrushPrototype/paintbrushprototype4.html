@@ -40,6 +40,7 @@
     <section id="menu">
         <input type="color" id="colorpicker" value="#000">
         <input type="range" id="rangepicker" min="2" max="100" value="15" >
+        <input type="image" id="eraserpicker" src="Images/eraser.png">
     </section>
 
     <script>
@@ -63,6 +64,7 @@ ctx.lineCap = 'round';
 // Colorpicker variable
 const colorPicker = window.document.querySelector('#colorpicker');
 const rangePicker = window.document.querySelector('#rangepicker');
+const eraserPicker = window.document.querySelector('#eraserpicker');
 
 //ste canvas
 canvas.width = window.innerWidth;
@@ -86,6 +88,12 @@ brushColor = e.target.value;
 rangePicker.addEventListener('input', function(e){
 brushSize = e.target.value;
 });
+// add event liostner to erarser picker
+eraserPicker.addEventListener('click', function(e){
+//window.alert('erase')
+brushColor='white'
+
+},false);
 
 //add several event listeners to the canvas
 canvas.addEventListener('mousedown', function(e){ 
@@ -129,7 +137,7 @@ function draw()
 window.addEventListener('resize', function()
 {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;p
+    canvas.height = window.innerHeight;
 })
     </script>
 </body>

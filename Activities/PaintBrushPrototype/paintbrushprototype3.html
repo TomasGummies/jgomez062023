@@ -119,6 +119,7 @@ function draw()
         // ctx.beginPath();
         ctx.strokeStyle = brushColor;
         ctx.lineWidth = brushSize;
+        ctx.lineJoin = 'round'
         // ctx.arc(mouse.x, mouse.y, brushSize, 0, Math.PI * 2);
         ctx.lineTo(mouse.x, mouse.y);
         ctx.stroke();
