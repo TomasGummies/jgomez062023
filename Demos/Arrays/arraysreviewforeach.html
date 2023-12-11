@@ -9,12 +9,12 @@
     <h1>Random Fruit Array</h1>
 
     <div id="displayrandomfood">
-
+<img src="" alt="">
     </div>
-
     <script>
+
         // Create Fruit Array
-        let foodList = ['apple.png', 'banana.png', 'cherry.png', 'grape.png'];
+        let foodList = ['apple.png','banana.png', 'cherry.png', 'grape.png', 'peach.png', 'pear.png', 'strawberry.png' ];
 
         //Add a few more food items
         foodList.push('peach.png');
@@ -29,8 +29,18 @@
         // Generate random number
         let randomNumber;
         randomNumber = Math.floor(Math.random() * foodList.length);
+        // window.alert(foodList[randomNumber]);
 
-        window.alert(foodList[randomNumber]);
+        const displayrandomfood = window.document.querySelector('#displayrandomfood')
+        displayrandomfood.innerHTML = "<img src='Images/" +  foodList[randomNumber] + "'alt='fruit'  >";          //foodList[randomNumber];
+
+        // see all items in fruit list array
+foodList.forEach(
+    function(item){
+        console.log("Yummy" + item + "!");
+    }
+);
+
 
     </script>
 </body>
