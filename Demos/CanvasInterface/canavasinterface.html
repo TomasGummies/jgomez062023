@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Interface</title>
+    <style>
+        h1
+        {
+            text-align: center;
+        }
+        #canvas
+        {
+            border: 2px solid black;
+            display: block;
+            margin: auto;
+        }
+        #buttonholder
+        {
+            width: 300px;
+            margin: auto;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        #button
+        {
+            margin: 0.5rem;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Interface</h1>
+    <h2>Drawing with canvas</h2>
+    <canvas id="canvas"></canvas>
+    <div id="buttonholder">
+        <button id="create">Create Line</button>
+        <button id="create">Create Rectangle</button>
+        <button id="create">Create Shape</button>
+        <button id="create">Create Arc</button>
+    </div>
+</body>
+</html>
