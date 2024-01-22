@@ -23,7 +23,7 @@
             display: flex;
             flex-direction: column;
         }
-        #button
+        button
         {
             margin: 0.5rem;
             padding: 0.5rem;
@@ -35,10 +35,52 @@
     <h2>Drawing with canvas</h2>
     <canvas id="canvas"></canvas>
     <div id="buttonholder">
-        <button id="create">Create Line</button>
-        <button id="create">Create Rectangle</button>
-        <button id="create">Create Shape</button>
-        <button id="create">Create Arc</button>
+        <button id="createline">Create Line</button>
+        <button id="createrectangle">Create Rectangle</button>
+        <button id="createshape">Create Shape</button>
+        <button id="createarc">Create Arc</button>
+
+        <script>
+            // Create Variables
+            const canvas = window.document.querySelector('#canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Configure Canvas 
+            canvas.width = 400;
+            canvas.height = 400;
+
+
+            //style canvas
+            canvas.style.backgroundColor = 'lightblue'
+
+            // Create Variables
+            const btnCreateLine = window.document.querySelector('#createline');
+            const btnCreateRectangle = window.document.querySelector('#createrectangle');
+            const btnCreateShape= window.document.querySelector('#createshape');
+            const btnCreateArc= window.document.querySelector('#createarc');
+
+            //Add event listeners
+            btnCreateLine.addEventListener('click', function(){
+                window.alert("btnCreateLine")
+            } );
+
+            btnCreateRectangle.addEventListener('click', function(){
+                window.alert("btnCreateRectangle")
+            } );
+
+            btnCreateShape.addEventListener('click', function(){
+                window.alert("btnCreateShape")
+            } );
+
+            btnCreateArc.addEventListener('click', function(){
+                window.alert("btnCreateArc")
+            } );
+            
+
+            
+
+        
+        </script>
     </div>
 </body>
 </html>
